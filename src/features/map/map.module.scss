@@ -1,11 +1,26 @@
+.section {
+    --section-margin-bottom: 20px;
+    margin-bottom: var(--section-margin-bottom);
+}
+
+.section-header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color-soft);
+    font-size: var(--font-size-3);
+
+    h2 {
+        margin: 0px;
+        text-align: center;
+    }
+}
+
 .map {
     border-radius: var(--border-radius-m);
     width: 100%;
-    height: 100%;
+    height: calc(100vh - var(--header-height) * 2 - var(--container-padding-x));
     overflow: hidden;
-}
-
-.dialog-popup {
-    padding: 30px;
 }
 

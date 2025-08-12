@@ -10,7 +10,23 @@
 
 	--border-radius-m: 9px;
 
-	--header-height: 60px;
+	--header-height: 80px;
+
+	@media (max-width: 940px) {
+		--font-size-3: 14px;
+		--font-size-4: 22px;
+		--font-size-5: 26px;
+	}
+	@media (max-width: 600px) {
+		--font-size-3: 12px;
+		--font-size-4: 18px;
+		--font-size-5: 24px;
+		--header-height: 110px;
+	}
+	@media (max-width: 400px) {
+		--font-size-4: 16px;
+		--font-size-5: 22px;
+	}
 
 	--border-weight-soft: 1px;
 	--border-weight-hard: 2px;

@@ -25,7 +25,6 @@ export default tseslint.config(
 			'@typescript-eslint/no-unsafe-function-type': 'warn',
 			'@typescript-eslint/no-namespace': 'off',
 			'@typescript-eslint/no-empty-object-type': 'warn',
-			'@typescript-eslint/no-unused-vars': 'warn',
 		},
 	}
 );

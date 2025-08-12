@@ -1,18 +1,23 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapSelectArea } from './select-area/map-select-area';
+import { LatLngExpression } from 'leaflet';
 import styles from './map.module.scss';
 import 'leaflet/dist/leaflet.css';
-import { MapSelectArea } from './select-area/map-select-area';
+import { classNames } from '../../shared/helpers/class-names';
 
-const position = [51.505, -0.09];
+const defaultPosition: LatLngExpression = [51.505, -0.09];
 
 export const Map = () => {
 	return (
-		<>
+		<section className={classNames(styles['section'], ['container'])}>
+			<div className={styles['section-header']}>
+				<h2>Зажмите клавишу cnrl и левую кнопку мыши, рисуйте, отпускайте - все просто!</h2>
+			</div>
 			<MapContainer
-				center={position}
+				center={defaultPosition}
 				zoom={13}
 				className={styles['map']}
-				scrollWheelZoom={false}
+				scrollWheelZoom={true}
 			>
 				<TileLayer
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -20,6 +25,6 @@ export const Map = () => {
 				/>
 				<MapSelectArea />
 			</MapContainer>
-		</>
+		</section>
 	);
 };
