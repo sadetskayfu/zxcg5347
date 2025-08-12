@@ -51,7 +51,7 @@ const DisplayBounds = ({ bounds, ...otherProps }: { bounds: Bounds | null } & HT
             <span aria-orientation='horizontal' role='separator' className={styles['bounds__separator']}/>
             <div className={styles['bounds__row']}>
                 <span>Северо-восток</span>
-                <span>Широта {lat1.toFixed(4)}, Долгота {lng1.toFixed(4)}</span>
+                <span>Широта {lat2.toFixed(4)}, Долгота {lng2.toFixed(4)}</span>
             </div>
 		</div>
 	);
