@@ -1,0 +1,68 @@
+@use '../../../app/styles/helpers' as *;
+
+.button {
+	--button-height: ;
+	--button-padding-inline: ;
+	--button-color: ;
+	--button-bg-color: ;
+	--button-hover-bg-color: ;
+	position: relative;
+	height: var(--button-height);
+	padding-block: 0px;
+	padding-inline: var(--button-padding-inline);
+	transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+	border: none;
+	color: var(--button-color);
+	background-color: var(--button-bg-color);
+	@include user-select-off;
+
+	@include hover {
+		background-color: var(--button-hover-bg-color);
+	}
+
+	&.full-width {
+		width: 100%;
+	}
+
+	&.size-s {
+		--button-padding-inline: var(--button-padding-inline-s);
+		--button-height: var(--button-height-s);
+	}
+
+	&.border-radius-m {
+		border-radius: var(--border-radius-m);
+	}
+
+	&.variant-outlined {
+		--button-bg-color: transparent;
+		--button-border-color: ;
+		outline: var(--border-weight-soft) solid var(--button-border-color);
+		outline-offset: var(--outline-offset);
+		
+		@include hover {
+			outline-color: var(--button-color);
+			background-color: var(--button-hover-bg-color);
+		}
+
+		&.color-secondary {
+			--button-color: var(--font-color-hard);
+			--button-border-color: var(--color-grey-800);
+			--button-hover-bg-color: var(--color-grey-opacity-soft);
+		}
+	}
+
+	&:focus-visible {
+		outline: var(--border-weight-hard) solid var(--color-primary-500);
+		outline-offset: var(--button-outline-offset);
+	}
+
+	&.disabled {
+		@include disabled;
+	}
+}
+

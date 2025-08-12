@@ -1,0 +1,39 @@
+.dialog {
+    max-width: 600px;
+    width: 100%;
+}
+
+.dialog-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.dialog-title {
+    font-size: var(--font-size-4);
+}
+
+.dialog-close {
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.bounds {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    color: var(--font-color-soft);
+    size: var(--font-size-3);
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__separator {
+        width: 100%;
+        height: var(--border-weight-soft);
+        background-color: var(--color-grey-800);
+    }
+}

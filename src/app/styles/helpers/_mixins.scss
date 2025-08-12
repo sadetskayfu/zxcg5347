@@ -1,0 +1,21 @@
+@mixin user-select-off {
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+@mixin disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+@mixin outline {
+	outline: var(--border-weight-soft) solid var(--border-color-grey);
+	outline-offset: var(--outline-offset);
+}
+
+@mixin focus-outline {
+	outline: var(--border-weight-hard) solid var(--theme-color-primary-main);
+	outline-offset: var(--outline-offset);
+}
+

@@ -1,0 +1,21 @@
+.app {
+    height: 100vh;
+    position: relative;
+}
+
+.section {
+    --section-padding-block: 20px;
+    margin-block: var(--section-padding-block);
+    height: calc(100vh - var(--header-height) - var(--section-padding-block) * 2);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-height);
+    border-bottom: var(--border-weight-soft) solid var(--color-grey-800);
+    h1 {
+        font-size: var(--font-size-5);
+    }
+}
