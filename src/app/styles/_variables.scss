@@ -41,16 +41,4 @@
 		var(--grey-lightness),
 		0.1
 	); // hover
-	--color-grey-opacity-medium: hsla(
-		var(--grey-hue),
-		var(--grey-saturation),
-		var(--grey-lightness),
-		0.2
-	); // selected
-	--color-grey-opacity-hard: hsla(
-		var(--grey-hue),
-		var(--grey-saturation),
-		var(--grey-lightness),
-		0.3
-	); // hover on selected
 }
