@@ -24,8 +24,13 @@ export const MapSelectArea = () => {
 			<Dialog.Root initialFocus={-1} open={openDialog} setOpen={setOpenDialog}>
 				<Dialog.Portal>
 					<Dialog.Backdrop />
-					<Dialog.Popup className={styles['dialog']} contentClassName={styles['dialog-content']}>
-						<Dialog.Title className={styles['dialog-title']}>Выбранные координаты</Dialog.Title>
+					<Dialog.Popup
+						className={styles['dialog']}
+						contentClassName={styles['dialog-content']}
+					>
+						<Dialog.Title className={styles['dialog-title']}>
+							Выбранные координаты
+						</Dialog.Title>
 						<Dialog.Description render={<DisplayBounds bounds={bounds} />} />
 						<Dialog.Close
 							render={<Button className={styles['dialog-close']}>Закрыть</Button>}
@@ -38,21 +43,34 @@ export const MapSelectArea = () => {
 };
 
 const DisplayBounds = ({ bounds, ...otherProps }: { bounds: Bounds | null } & HTMLProps) => {
-	if (!bounds) return <span className={styles['bounds']} {...otherProps}>Координаты не выбраны</span>;
+	if (!bounds)
+		return (
+			<span className={styles['bounds']} {...otherProps}>
+				Координаты не выбраны
+			</span>
+		);
 
 	const [[lat1, lng1], [lat2, lng2]] = bounds;
 
 	return (
 		<div className={styles['bounds']} {...otherProps}>
-            <div className={styles['bounds__row']}>
-                <span>Юго-запад</span>
-                <span>Широта {lat1.toFixed(4)}, Долгота {lng1.toFixed(4)}</span>
-            </div>
-            <span aria-orientation='horizontal' role='separator' className={styles['bounds__separator']}/>
-            <div className={styles['bounds__row']}>
-                <span>Северо-восток</span>
-                <span>Широта {lat2.toFixed(4)}, Долгота {lng2.toFixed(4)}</span>
-            </div>
+			<div className={styles['bounds__row']}>
+				<span>Юго-запад</span>
+				<span>
+					Широта {lat1.toFixed(4)}, Долгота {lng1.toFixed(4)}
+				</span>
+			</div>
+			<span
+				aria-orientation="horizontal"
+				role="separator"
+				className={styles['bounds__separator']}
+			/>
+			<div className={styles['bounds__row']}>
+				<span>Северо-восток</span>
+				<span>
+					Широта {lat2.toFixed(4)}, Долгота {lng2.toFixed(4)}
+				</span>
+			</div>
 		</div>
 	);
 };

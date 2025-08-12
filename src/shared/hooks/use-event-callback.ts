@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useLazyRef } from './use-lazy-ref';
 
 const useInsertionEffect = (React as any)[
