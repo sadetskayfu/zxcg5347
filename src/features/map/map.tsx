@@ -11,7 +11,7 @@ export const Map = () => {
 	return (
 		<section className={classNames(styles['section'], ['container'])}>
 			<div className={styles['section-header']}>
-				<h2>Зажмите клавишу cnrl и левую кнопку мыши, рисуйте, отпускайте - все просто!</h2>
+				<h2>Зажмите клавишу ctrl и левую кнопку мыши, рисуйте, отпускайте - все просто!</h2>
 			</div>
 			<MapContainer
 				center={defaultPosition}

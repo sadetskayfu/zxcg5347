@@ -7,7 +7,7 @@ export const App = () => {
 		<div className={styles['app']}>
 			<header className={styles['header']}>
 				<div className="container">
-					<h1>Насируйте границы и получите их КООО!</h1>
+					<h1>Нарисуйте границы и получите их координаты!</h1>
 				</div>
 			</header>
 			<Map />
