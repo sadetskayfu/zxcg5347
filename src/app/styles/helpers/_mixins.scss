@@ -10,12 +10,12 @@
 }
 
 @mixin outline {
-	outline: var(--border-weight-soft) solid var(--border-color-grey);
+	outline: var(--border-weight-soft) solid var(--color-grey-800);
 	outline-offset: var(--outline-offset);
 }
 
 @mixin focus-outline {
-	outline: var(--border-weight-hard) solid var(--theme-color-primary-main);
-	outline-offset: var(--outline-offset);
+	outline: var(--border-weight-hard) solid var(--color-primary-500);
+	outline-offset: 2px;
 }
 
