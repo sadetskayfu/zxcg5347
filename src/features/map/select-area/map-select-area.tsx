@@ -21,15 +21,28 @@ export const MapSelectArea = () => {
 	return (
 		<>
 			<SelectArea onBoundsChange={handleChangeBounds} />
-			<Dialog.Root initialFocus={-1} open={openDialog} setOpen={setOpenDialog}>
+			<Dialog.Root
+				role="alertdialog"
+				closeOnOutsidePress={false}
+				closeOnFocusOut={false}
+				removeScroll={false}
+				initialFocus={-1}
+				open={openDialog}
+				setOpen={setOpenDialog}
+			>
 				<Dialog.Portal>
-					<Dialog.Backdrop />
 					<Dialog.Popup
 						className={styles['dialog']}
 						contentClassName={styles['dialog-content']}
+						onMouseDown={(event: React.MouseEvent) => {
+							// Фикс проблемы залипания ctrl. Если мы кликаем по dialog с зажатой клавишей ctrl и dialog получает фокус, почему-то состояние ctrl не сбрасывается в false, и область можно выбирать без зажатие ctrl, 
+							if (event.ctrlKey) {
+							  event.preventDefault();
+							}
+						  }}
 					>
 						<Dialog.Title className={styles['dialog-title']}>
-							Выбранные координаты
+							Координаты выбранной области
 						</Dialog.Title>
 						<Dialog.Description render={<DisplayBounds bounds={bounds} />} />
 						<Dialog.Close
@@ -46,7 +59,7 @@ const DisplayBounds = ({ bounds, ...otherProps }: { bounds: Bounds | null } & HT
 	if (!bounds)
 		return (
 			<span className={styles['bounds']} {...otherProps}>
-				Координаты не выбраны
+				Область не выбрана
 			</span>
 		);
 
