@@ -35,11 +35,13 @@ export const MapSelectArea = () => {
 						className={styles['dialog']}
 						contentClassName={styles['dialog-content']}
 						onMouseDown={(event: React.MouseEvent) => {
-							// Фикс проблемы залипания ctrl. Если мы кликаем по dialog с зажатой клавишей ctrl и dialog получает фокус, почему-то состояние ctrl не сбрасывается в false, и область можно выбирать без зажатие ctrl, 
+							// Предотврощаем получение фокуса на dialog при нажатии по нему, если зажата клавиша ctrl.
+							
+							// Прбелма: Залипание клавиши ctrl. Если мы кликаем по dialog с зажатой клавишей ctrl, тем самым dialog получает фокус, далее мы отпускает ctrl, но подкопотное состояниие ctrl в SelectArea не сбрасывается в false. Видимо обработчики на клавишу ctrl работают только когда map находится в фокусе.
 							if (event.ctrlKey) {
-							  event.preventDefault();
+								event.preventDefault();
 							}
-						  }}
+						}}
 					>
 						<Dialog.Title className={styles['dialog-title']}>
 							Координаты выбранной области
